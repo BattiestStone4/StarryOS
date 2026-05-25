@@ -1,0 +1,10 @@
+[package]
+name = "act_infer"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+tract-onnx = "0.21"
+anyhow = "1"

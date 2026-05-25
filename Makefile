@@ -57,4 +57,11 @@ la:
 vf2:
 	$(MAKE) ARCH=riscv64 APP_FEATURES=vf2 MYPLAT=axplat-riscv64-visionfive2 BUS=mmio build
 
-.PHONY: build run justrun debug disasm clean
+act-prepare: rootfs
+	@echo "Preparing rootfs with ACT inference overlay..."
+	@bash scripts/prepare_rootfs.sh
+
+act-run: act-prepare
+	@$(MAKE) run
+
+.PHONY: build run justrun debug disasm clean act-prepare act-run

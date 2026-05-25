@@ -1,0 +1,3 @@
+[target.riscv64gc-unknown-linux-musl]
+linker = "riscv64-linux-musl-gcc"
+rustflags = ["-C", "target-feature=+crt-static", "-C", "relocation-model=static"]
